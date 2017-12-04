@@ -15,6 +15,7 @@ HRESULT ShipBase::init(const char * imgName, int x, int y)
 	radius = img->getFrameWidth()/2;
 
 	bul = new classBullet;
+	return S_OK;
 }
 
 void ShipBase::release(void)

@@ -140,10 +140,8 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationTest.h" />
-    <ClInclude Include="BattleCruiser.h" />
     <ClInclude Include="collision.h" />
-    <ClInclude Include="selectScene.h" />
-    <ClInclude Include="Ship.h" />
+    <ClInclude Include="iniDataManager.h" />
     <ClInclude Include="bullets.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="Effect.h" />
@@ -166,7 +164,6 @@
     <ClInclude Include="singletonBase.h" />
     <ClInclude Include="soundManager.h" />
     <ClInclude Include="soundTest.h" />
-    <ClInclude Include="StarcraftScene.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="test.h" />
@@ -178,10 +175,8 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationTest.cpp" />
-    <ClCompile Include="BattleCruiser.cpp" />
     <ClCompile Include="collision.cpp" />
-    <ClCompile Include="selectScene.cpp" />
-    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="iniDataManager.cpp" />
     <ClCompile Include="bullets.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="effectManager.cpp" />
@@ -199,7 +194,6 @@
     <ClCompile Include="SaveLoadTest.cpp" />
     <ClCompile Include="soundManager.cpp" />
     <ClCompile Include="soundTest.cpp" />
-    <ClCompile Include="StarcraftScene.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

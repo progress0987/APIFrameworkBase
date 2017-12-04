@@ -45,9 +45,6 @@
     <Filter Include="2DGameFramework\Tests">
       <UniqueIdentifier>{ed54c2f5-2658-44e7-834a-394b75544d8a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2DGameFramework\Tests\starcraft">
-      <UniqueIdentifier>{0e3f27d7-39af-4ee5-a0f0-57330ec6c7e6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MainGame">
       <UniqueIdentifier>{8f2af53b-46be-44be-8106-95319dfcf85a}</UniqueIdentifier>
     </Filter>
@@ -141,18 +138,6 @@
     <ClInclude Include="soundTest.h">
       <Filter>2DGameFramework\Tests</Filter>
     </ClInclude>
-    <ClInclude Include="Ship.h">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClInclude>
-    <ClInclude Include="BattleCruiser.h">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClInclude>
-    <ClInclude Include="StarcraftScene.h">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClInclude>
-    <ClInclude Include="selectScene.h">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClInclude>
     <ClInclude Include="collision.h">
       <Filter>2DGameFramework\Util</Filter>
     </ClInclude>
@@ -172,6 +157,9 @@
       <Filter>2DGameFramework\Tests</Filter>
     </ClInclude>
     <ClInclude Include="enemyManager.h">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="iniDataManager.h">
       <Filter>2DGameFramework\Manager</Filter>
     </ClInclude>
   </ItemGroup>
@@ -245,18 +233,6 @@
     <ClCompile Include="soundTest.cpp">
       <Filter>2DGameFramework\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="Ship.cpp">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClCompile>
-    <ClCompile Include="BattleCruiser.cpp">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClCompile>
-    <ClCompile Include="StarcraftScene.cpp">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClCompile>
-    <ClCompile Include="selectScene.cpp">
-      <Filter>2DGameFramework\Tests\starcraft</Filter>
-    </ClCompile>
     <ClCompile Include="collision.cpp">
       <Filter>2DGameFramework\Util</Filter>
     </ClCompile>
@@ -264,6 +240,9 @@
       <Filter>2DGameFramework\Tests</Filter>
     </ClCompile>
     <ClCompile Include="enemyManager.cpp">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="iniDataManager.cpp">
       <Filter>2DGameFramework\Manager</Filter>
     </ClCompile>
   </ItemGroup>

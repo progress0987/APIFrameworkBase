@@ -34,15 +34,13 @@
 #include "timeManager.h"
 #include "txtData.h"
 #include "soundManager.h"
+#include "iniDataManager.h"
+#include "effectManager.h"
 
 using namespace std;
 using namespace Util;
 //====================================
 // ##내가 만든 헤더파일 요기에 추가!!
-//====================================
-
-//====================================
-//    ##싱글톤 추가
 //====================================
 
 
@@ -60,16 +58,18 @@ using namespace Util;
 
 
 //랜덤함수 디파인
-#define RND randomFunction::getSingleton()
+#define RND				randomFunction::getSingleton()
 //키매니저
-#define KEYMANAGER KeyManager::getSingleton()
+#define KEYMANAGER		KeyManager::getSingleton()
 
-#define IMAGEMANAGER imageManager::getSingleton()
-#define TIMEMANAGER timeManager::getSingleton()
-#define EFFECTMANAGER effectManager::getSingleton()
+#define IMAGEMANAGER	imageManager::getSingleton()
+#define TIMEMANAGER		timeManager::getSingleton()
+#define EFFECTMANAGER	effectManager::getSingleton()
 
-#define SOUNDMANAGER soundManager::getSingleton()
-#define TXTDATA    txtData::getSingleton()
+#define SOUNDMANAGER	soundManager::getSingleton()
+#define TXTDATA			txtData::getSingleton()
+
+#define INIDATAMANAGER	iniDataManager::getSingleton()
 //===============================================
 //   ##매크로 함수 ##(메인게임 릴리즈 부분에서 사용)
 //===============================================

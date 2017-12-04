@@ -3,9 +3,17 @@
 //버전 낮은 사람들을 위한 cMath 라이브러리 추가
 #include <cmath>
 
-#define DEC_TO_RAD 0.017453f // 1도에 대한 라디안 값
+#define DEG_TO_RAD 0.017435f //디그리 1도(라디안값)
 #define PI 3.141592654f
-#define PI2 PI*2
+#define PI2 (PI*2.f)
+
+#define PI_2		(PI/2.f)
+#define PI_4		float(PI/4.0f)
+#define PI_8		float(PI/8.0f)
+#define PI_16		float(PI/16.0f)
+#define PI_32		float(PI/32.0f)
+
+#define FLOAT_TO_INT(f1) static_cast<int>(f1)
 #define FLOAT_EPSILON 0.001f // 실수에서 가장 작은 단위
 
 namespace Util {

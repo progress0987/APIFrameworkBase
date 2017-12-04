@@ -14,13 +14,6 @@ mainGame::~mainGame()
 HRESULT mainGame::init(void) 
 {
 	gameNode::init(true);
-	stcScene = new StarcraftScene;
-	stcScene->init();
-
-	selScene = new selectScene;
-	selScene->init();
-	
-	curScene = selScene;
 
 	return S_OK;
 }
