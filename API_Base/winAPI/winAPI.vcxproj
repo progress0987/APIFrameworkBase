@@ -138,8 +138,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Action.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationTest.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="iniDataManager.h" />
     <ClInclude Include="bullets.h" />
@@ -161,6 +163,7 @@
     <ClInclude Include="randomFuction.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SaveLoadTest.h" />
+    <ClInclude Include="sceneManager.h" />
     <ClInclude Include="singletonBase.h" />
     <ClInclude Include="soundManager.h" />
     <ClInclude Include="soundTest.h" />
@@ -173,8 +176,10 @@
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Action.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationTest.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="iniDataManager.cpp" />
     <ClCompile Include="bullets.cpp" />
@@ -192,6 +197,7 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="progressBar.cpp" />
     <ClCompile Include="SaveLoadTest.cpp" />
+    <ClCompile Include="sceneManager.cpp" />
     <ClCompile Include="soundManager.cpp" />
     <ClCompile Include="soundTest.cpp" />
     <ClCompile Include="stdafx.cpp">
