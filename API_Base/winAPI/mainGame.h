@@ -1,16 +1,14 @@
 #pragma once
 #include"gameNode.h"
-#include "StarcraftScene.h"
-#include "selectScene.h"
 class mainGame :  public gameNode
 {
 
 private:
-
-	gameNode* curScene;
-	gameNode* selScene;
-	gameNode* stcScene;
-
+	RECT sel1, sel2, sel3, sel4;
+	int offsetX, offsetY;
+	int curSel;
+	bool selected;
+	int selectcount;
 public:
 
 	HRESULT init(void);
