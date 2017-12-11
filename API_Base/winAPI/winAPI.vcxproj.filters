@@ -64,6 +64,12 @@
     <Filter Include="2DGameFramework\Action">
       <UniqueIdentifier>{ad8b4b20-36a8-4680-8163-46242e1ac83c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2DGameFramework\d2dTest">
+      <UniqueIdentifier>{51819769-a4e6-41f7-823a-550c18f98ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\loading">
+      <UniqueIdentifier>{a9e9b8e4-d6dd-436e-ba8f-a3f0e868f44e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -177,6 +183,15 @@
     <ClInclude Include="sceneManager.h">
       <Filter>2DGameFramework\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="d2dx_test.h">
+      <Filter>2DGameFramework\d2dTest</Filter>
+    </ClInclude>
+    <ClInclude Include="loading.h">
+      <Filter>2DGameFramework\loading</Filter>
+    </ClInclude>
+    <ClInclude Include="D2DImage.h">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -268,6 +283,12 @@
     </ClCompile>
     <ClCompile Include="sceneManager.cpp">
       <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="loading.cpp">
+      <Filter>2DGameFramework\loading</Filter>
+    </ClCompile>
+    <ClCompile Include="D2DImage.cpp">
+      <Filter>2DGameFramework\Image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

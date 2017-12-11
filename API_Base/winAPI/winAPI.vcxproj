@@ -143,6 +143,8 @@
     <ClInclude Include="AnimationTest.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="collision.h" />
+    <ClInclude Include="D2DImage.h" />
+    <ClInclude Include="d2dx_test.h" />
     <ClInclude Include="iniDataManager.h" />
     <ClInclude Include="bullets.h" />
     <ClInclude Include="commonMacroFunction.h" />
@@ -156,6 +158,7 @@
     <ClInclude Include="image.h" />
     <ClInclude Include="imageManager.h" />
     <ClInclude Include="KeyManager.h" />
+    <ClInclude Include="loading.h" />
     <ClInclude Include="mainGame.h" />
     <ClInclude Include="PixelCollisionTest.h" />
     <ClInclude Include="player.h" />
@@ -181,6 +184,7 @@
     <ClCompile Include="AnimationTest.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="collision.cpp" />
+    <ClCompile Include="D2DImage.cpp" />
     <ClCompile Include="iniDataManager.cpp" />
     <ClCompile Include="bullets.cpp" />
     <ClCompile Include="Effect.cpp" />
@@ -192,6 +196,7 @@
     <ClCompile Include="image.cpp" />
     <ClCompile Include="imageManager.cpp" />
     <ClCompile Include="KeyManager.cpp" />
+    <ClCompile Include="loading.cpp" />
     <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="PixelCollisionTest.cpp" />
     <ClCompile Include="player.cpp" />
