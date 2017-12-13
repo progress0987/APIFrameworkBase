@@ -14,12 +14,10 @@ mainGame::~mainGame()
 HRESULT mainGame::init(void) 
 {
 	gameNode::init(true);
-	test1.init(g_pd3dDevice);
-	test1.setImage("sprites/test.jpg");
-	test2.init(g_pd3dDevice);
-	test2.setImage("sprites/battle.bmp",TRUE,16,1,0xffff00ff);
-	test3.init(g_pd3dDevice);
-	test3.setImage("sprites/skill.png",TRUE,5,3,0xff000000);
+	IMAGEMANAGER->addFrameImage("좀비", g_pd3dDevice, "sprites/zombie.png", 44, 8);
+	IMAGEMANAGER->addImage("테스트", g_pd3dDevice, "sprites/test.jpg");
+	testx = 0;
+	testy = 1;
 
 	return S_OK;
 }
@@ -33,53 +31,45 @@ HRESULT mainGame::init(void)
  {
 	 gameNode::update();
 	 tick++;
-	 if (tick % 10 == 0) {
+	 if (tick % 20 == 0) {
 		 testx++;
-		 if (testx > test3.getFrameMaxX()) {
-			 testx = 0; testy++;
-			 if (testy > test3.getFrameMaxY()) {
-				 testx = 0; testy = 0;
-			 }
-		 }
-	 }
-	 if (tick % 30 == 0) {
-		 test++;
-		 if (test > test2.getFrameMaxX()) {
-			 test = 0;
-		 }
-	 }
-	 if (tick % 10 == 0) {
-		 testangle += 0.03f;
+		 if (testx > 11) testx = 4;
+		 //if (testx > 21) testx = 12;
+		 //if (testx > 3) testx = 0;
 	 }
 	 if (KEYMANAGER->isStayKeyDown(VK_LEFT)) {
-		 posx -= 3;
+		 posx -= 1.0f;
+		 posy += 0.5f;
+		 testy = 7;
 	 }
 	 if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
-		 posx += 3;
+		 posx += 1.0f;
+		 posy -= 0.5f;
+		 testy = 3;
 	 }
 	 if (KEYMANAGER->isStayKeyDown(VK_UP)) {
-		 posy -= 3;
+		 posx -= 1.0f;
+		 posy -= 0.5f;
+		 testy = 1;
 	 }
 	 if (KEYMANAGER->isStayKeyDown(VK_DOWN)) {
-		 posy += 3;
-	 }
-	 if (KEYMANAGER->isOnceKeyDown(VK_TAB)) {
-		 trigger = !trigger;
+		 posx += 1.0f;
+		 posy += 0.5f;
+		 testy = 5;
 	 }
 
  }
  //여기가 그려주는 곳
  void mainGame::render() 
  {
-	 HDC curDC;
-	 //g_pd3dSurface->GetDC(&curDC);
-	 test1.render(300, 300);
-	 test1.rotatedrender(200,200,testangle);
+	 paint();
+	 TIMEMANAGER->render(getMemDC());
 
-	 //test1.render(500, 500);
+ }
 
-	 test2.rotatedframerender(WINSIZEX/2,WINSIZEY/2,test,0,testangle);
-	 //test3.render();
-	 test3.rotatedframerender(posx, posy, testx, testy,testangle);
-	 //TIMEMANAGER->render(curDC);
+ void mainGame::paint()
+ {
+	 IMAGEMANAGER->findImage("테스트")->render(300, 300);
+	 IMAGEMANAGER->findImage("좀비")->framerender(posx, posy, testx, testy);
+	 //test1.framerender(posx, posy,testx, testy);
  }

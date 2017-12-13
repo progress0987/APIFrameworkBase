@@ -22,10 +22,9 @@ class D2DImage
 	UINT				maxFrameX;					//프레임 끝번호(가로)
 	UINT				maxFrameY;					//프레임 끝번호(세로)
 public:
-	HRESULT init(LPDIRECT3DDEVICE9 dev) { if (curDev == NULL) { curDev = dev; return S_OK; } else return E_FAIL; }
-	HRESULT setImage(char* fileName);
-	HRESULT setImage(char* fileName, LONG tr);
-	HRESULT setImage(char* fileName,BOOL framed,unsigned int frameX,unsigned int frameY, LONG tr=NULL);
+	HRESULT init(LPDIRECT3DDEVICE9 dev) { curDev = dev; return S_OK; }
+	HRESULT setImage(const char* fileName, DWORD tr=NULL);
+	HRESULT setImage(const char* fileName,BOOL framed,unsigned int frameX,unsigned int frameY, DWORD tr=NULL);
 	void release();
 
 	///////////////////////////////////렌더들

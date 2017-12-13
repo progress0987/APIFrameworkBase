@@ -70,6 +70,9 @@
     <Filter Include="2DGameFramework\loading">
       <UniqueIdentifier>{a9e9b8e4-d6dd-436e-ba8f-a3f0e868f44e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2DGameFramework\Map">
+      <UniqueIdentifier>{ce2daf19-fe37-473a-b5ba-c5a049547b1c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -192,6 +195,12 @@
     <ClInclude Include="D2DImage.h">
       <Filter>2DGameFramework\Image</Filter>
     </ClInclude>
+    <ClInclude Include="Astar.h">
+      <Filter>2DGameFramework\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>2DGameFramework\Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -289,6 +298,12 @@
     </ClCompile>
     <ClCompile Include="D2DImage.cpp">
       <Filter>2DGameFramework\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Astar.cpp">
+      <Filter>2DGameFramework\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>2DGameFramework\Map</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -141,10 +141,12 @@
     <ClInclude Include="Action.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationTest.h" />
+    <ClInclude Include="Astar.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="D2DImage.h" />
     <ClInclude Include="d2dx_test.h" />
+    <ClInclude Include="Field.h" />
     <ClInclude Include="iniDataManager.h" />
     <ClInclude Include="bullets.h" />
     <ClInclude Include="commonMacroFunction.h" />
@@ -182,9 +184,11 @@
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationTest.cpp" />
+    <ClCompile Include="Astar.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="D2DImage.cpp" />
+    <ClCompile Include="Field.cpp" />
     <ClCompile Include="iniDataManager.cpp" />
     <ClCompile Include="bullets.cpp" />
     <ClCompile Include="Effect.cpp" />

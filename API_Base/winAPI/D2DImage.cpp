@@ -2,29 +2,7 @@
 #include "D2DImage.h"
 
 
-HRESULT D2DImage::setImage(char * fileName)
-{
-	HRESULT hr = D3DXCreateTextureFromFileEx(
-		curDev,						//출력될 디바이스(HDC랑 비슷한듯)
-		_T(fileName),				//파일이름(주소)
-		D3DX_DEFAULT_NONPOW2,				//폭		전체를할때는0 또는 D3DX_DEFAULT로 사용
-		D3DX_DEFAULT_NONPOW2,				//높이		상동
-		1,									//밉레벨 이라고 함 - 2D에서는 무조건 1
-		0,
-		D3DFMT_UNKNOWN,					//파일로부터 형식을 가져오는것, D3DFMT_UNKNOWN으로하면 소스를 직접가지고옴 과거:D3DFMT_A8B8G8R8
-		D3DPOOL_MANAGED,
-		D3DX_FILTER_NONE,
-		D3DX_FILTER_NONE,
-		NULL,								//컬러키 - 해당 색을 출력하지않는다(투명인듯)
-		&c_ImgInfo,
-		NULL,
-		&c_pd3dTex);
-
-	D3DXCreateSprite(curDev, &c_pd3dSprite);
-	return hr;
-}
-
-HRESULT D2DImage::setImage(char * fileName, LONG tr)
+HRESULT D2DImage::setImage(const char * fileName, DWORD tr)
 {
 	HRESULT hr = D3DXCreateTextureFromFileEx(
 		curDev,						//출력될 디바이스(HDC랑 비슷한듯)
@@ -46,7 +24,7 @@ HRESULT D2DImage::setImage(char * fileName, LONG tr)
 	return hr;
 }
 
-HRESULT D2DImage::setImage(char * fileName, BOOL framed, unsigned int frameX, unsigned int frameY, LONG tr)
+HRESULT D2DImage::setImage(const char * fileName, BOOL framed, unsigned int frameX, unsigned int frameY, DWORD tr)
 {
 	HRESULT hr = D3DXCreateTextureFromFileEx(
 		curDev,						//출력될 디바이스(HDC랑 비슷한듯)

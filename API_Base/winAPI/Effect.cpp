@@ -2,7 +2,7 @@
 #include "Effect.h"
 
 
-HRESULT Effect::init(image * effectImage, int frameW, int frameH, int fps, float elapsedTime)
+HRESULT Effect::init(D2DImage * effectImage, int frameW, int frameH, int fps, float elapsedTime)
 {
 	if (!effectImage) return E_FAIL;
 
@@ -41,7 +41,7 @@ void Effect::render(void)
 {
 	if (!isRunning) return;
 
-	effectImage->aniRender(getMemDC(), x, y, effectAnimation);
+	//effectImage->aniRender(getMemDC(), x, y, effectAnimation);
 }
 
 void Effect::startEffect(int x, int y)

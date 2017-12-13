@@ -39,7 +39,7 @@ HRESULT gameNode::initD3D(HWND hWnd) {
 	if (FAILED(g_pd3dDevice->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &g_pd3dSurface))) {
 		return E_FAIL;
 	}
-	//g_pd3dSurface->GetDC(&hdc);
+	//g_pd3dSurface->GetDC(&backDC);
 	return S_OK;														//디바이스 상태정보 처리 완료
 }
 HRESULT gameNode::init(void)
@@ -50,7 +50,6 @@ HRESULT gameNode::init(void)
 }
 HRESULT gameNode::init(bool managerInit)
 {
-	//hdc = GetDC(_hWnd);
 	this->managerInit = managerInit;
 	/////////////////////////테스트중
 	//g_pD3D = Direct3DCreate9(D3D_SDK_VERSION);
@@ -76,6 +75,7 @@ HRESULT gameNode::init(bool managerInit)
 	//	&g_pd3dDevice
 	//);
 	////////////////////////////////////////////////////////
+
 	initD3D(_hWnd);
 	if (managerInit) {
 		SetTimer(_hWnd, 1, 10, NULL);
@@ -118,7 +118,6 @@ HRESULT gameNode::init(bool managerInit)
 LRESULT gameNode::MainProc(HWND hwnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
 	PAINTSTRUCT ps;
-	HDC hdc;
 
 	switch (iMessage)
 	{
@@ -129,22 +128,22 @@ LRESULT gameNode::MainProc(HWND hwnd, UINT iMessage, WPARAM wParam, LPARAM lPara
 
 	case WM_PAINT:
 	{
-		//hdc = BeginPaint(hwnd, &ps);
 		if (SUCCEEDED(g_pd3dDevice->BeginScene())) {
 			//3D그리기 시작
-			g_pd3dDevice->Clear(												//후면 버퍼를 rgb(0,0,255) 로 채워줌
+			g_pd3dDevice->Clear(												//후면 버퍼를 rgb(0,128,255) 로 채워줌
 				0,
 				NULL,															//아마 클리어 해줄 범위 렉트인듯 -확인
 				D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,								//Z버퍼까지 지워준다.
 				D3DCOLOR_XRGB(0, 128, 255),
 				1.0f,
 				0);
+			g_pd3dSurface->GetDC(&hdc);
 			render();
+			g_pd3dSurface->ReleaseDC(hdc);
 			
 			g_pd3dDevice->EndScene();
 		}
 		g_pd3dDevice->Present(NULL, NULL, NULL, NULL);
-		//EndPaint(hwnd, &ps);
 	}
 	break;
 
@@ -157,9 +156,9 @@ LRESULT gameNode::MainProc(HWND hwnd, UINT iMessage, WPARAM wParam, LPARAM lPara
 	case WM_KEYDOWN:
 		switch (wParam)
 		{
-		//case VK_ESCAPE:
-		//	PostMessage(hwnd, WM_DESTROY, 0, 0);
-		//	break;
+		case VK_ESCAPE:
+			PostMessage(hwnd, WM_DESTROY, 0, 0);
+			break;
 		}
 		break;
 	case WM_DESTROY:

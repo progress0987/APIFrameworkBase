@@ -6,14 +6,9 @@ class mainGame :  public gameNode
 
 private:
 	D2DImage test1;
-	D2DImage test2;
-	D2DImage test3;
-	int posx=300, posy=300;
+	float posx=300.f, posy=300.f;
 	int testx=0,testy = 0;
-	int test = 0;
 	int tick = 0;
-	float testangle = 0.0f;
-	bool trigger = false;
 
 public:
 
@@ -21,6 +16,8 @@ public:
 	virtual void release(void);
 	virtual void update(void);
 	virtual void render();
+
+	void paint();
 
 	mainGame();
 	~mainGame();

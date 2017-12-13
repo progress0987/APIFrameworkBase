@@ -10,7 +10,6 @@ private:
 	typedef vector<enemy*>::iterator EnemyListIter;
 	EnemyList Minions;
 	EnemyListIter MinionsIter;
-	Bullet* bullet;
 public:
 
 	HRESULT init();

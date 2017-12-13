@@ -20,75 +20,38 @@ void imageManager::release(void)
 {
 }
 
-//빈 비트맵
-image * imageManager::addImage(string key, int width, int height)
-{
-	image* img = findImage(key);
-	//이미지가 있으면 해당 이미지 사용
-	if (img) return img;
 
-	img = new image;
-	if (FAILED(img->init(width, height))) {
+D2DImage * imageManager::addImage(string key, LPDIRECT3DDEVICE9 dev, const char * fileName,bool trans, COLORREF transCol)
+{
+	D2DImage* img = findImage(key);
+	if (img) return img;
+	img = new D2DImage;
+	if (FAILED(img->init(dev))) {
 		SAFE_DELETE(img);
 		return NULL;
 	}
+	if (trans)img->setImage(fileName, transCol);
+	else img->setImage(fileName);
 	ImageList.insert(make_pair(key, img));
 	return img;
 }
 
-image * imageManager::addImage(string key, const char * fileName, int width, int height, bool trans, COLORREF transCol)
+D2DImage * imageManager::addFrameImage(string key, LPDIRECT3DDEVICE9 dev, const char * fileName, int frameX, int frameY, bool trans, COLORREF transCol)
 {
-	image* img = findImage(key);
+	D2DImage* img = findImage(key);
 	if (img) return img;
-	img = new image;
-	if (FAILED(img->init(fileName, width, height, trans, transCol))) {
+	img = new D2DImage;
+	if (FAILED(img->init(dev))) {
 		SAFE_DELETE(img);
 		return NULL;
 	}
+	if (trans)img->setImage(fileName, TRUE, frameX, frameY, transCol);
+	else img->setImage(fileName, TRUE, frameX, frameY);
 	ImageList.insert(make_pair(key, img));
 	return img;
 }
 
-image * imageManager::addImage(string key, const char * fileName, float x, float y, int width, int height, bool trans, COLORREF transCol)
-{
-	image* img = findImage(key);
-	if (img) return img;
-	img = new image;
-	if (FAILED(img->init(fileName,x,y, width, height, trans, transCol))) {
-		SAFE_DELETE(img);
-		return NULL;
-	}
-	ImageList.insert(make_pair(key, img));
-	return img;
-}
-
-image * imageManager::addFrameImage(string key, const char * fileName, int width, int height, int frameX, int frameY, bool trans, COLORREF transCol)
-{
-	image* img = findImage(key);
-	if (img) return img;
-	img = new image;
-	if (FAILED(img->init(fileName, width, height,frameX,frameY, trans, transCol))) {
-		SAFE_DELETE(img);
-		return NULL;
-	}
-	ImageList.insert(make_pair(key, img));
-	return img;
-}
-
-image * imageManager::addFrameImage(string key, const char * fileName, float x, float y, int width, int height, int frameX, int frameY, bool trans, COLORREF transCol)
-{
-	image* img = findImage(key);
-	if (img) return img;
-	img = new image;
-	if (FAILED(img->init(fileName,x,y, width, height,frameX,frameY, trans, transCol))) {
-		SAFE_DELETE(img);
-		return NULL;
-	}
-	ImageList.insert(make_pair(key, img));
-	return img;
-}
-
-image * imageManager::findImage(string key)
+D2DImage * imageManager::findImage(string key)
 {
 	mapImagerIter i = ImageList.find(key);
 
@@ -128,22 +91,4 @@ BOOL imageManager::deleteAll()
 	}
 	ImageList.clear();
 	return TRUE;
-}
-
-void imageManager::render(string key, HDC hdc)
-{
-	image* img = findImage(key);
-	if (img) img->render(hdc);
-}
-
-void imageManager::render(string key, HDC hdc, int destX, int destY)
-{
-	image* img = findImage(key);
-	if (img) img->render(hdc, destX, destY);
-}
-
-void imageManager::render(string key, HDC hdc, int destX, int destY, int sourX, int sourY, int width, int height)
-{
-	image* img = findImage(key);
-	if (img) img->render(hdc, destX, destY,sourX,sourY,width,height);
 }

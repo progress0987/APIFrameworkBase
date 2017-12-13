@@ -84,7 +84,7 @@ void effectManager::render(void)
 
 void effectManager::addEffect(string effectName, const char* imageName, int imageWidth, int imageHeight, int effectWidth, int effectHeight, int fps, float elapsedTime, int buffer)
 {
-	image* img;
+	D2DImage* img;
 	arrEffects vEffectBuffer;
 	arrEffect mArrEffect;
 
@@ -96,7 +96,7 @@ void effectManager::addEffect(string effectName, const char* imageName, int imag
 	}
 	else
 	{
-		img = IMAGEMANAGER->addImage(imageName, imageName, imageWidth, imageHeight, true, RGB(255, 0, 255));
+		//img = IMAGEMANAGER->addImage(imageName, imageName, imageWidth, imageHeight, true, RGB(255, 0, 255));
 	}
 
 	//버퍼만큼 생성
