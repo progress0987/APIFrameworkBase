@@ -86,9 +86,13 @@ extern HINSTANCE _hInstance;
 extern HWND _hWnd;
 extern POINT ptMouse;
 
-extern LPDIRECT3D9					g_pD3D;						//D3D 디바이스를 생성할 D3D 객체 변수
-extern LPDIRECT3DDEVICE9			g_pd3dDevice;				//D3D 디바이스
-extern LPDIRECT3DSURFACE9			g_pd3dSurface;
+struct Camera {
+	DOUBLE x;
+	DOUBLE y;
+};
+//extern LPDIRECT3D9					g_pD3D;						//D3D 디바이스를 생성할 D3D 객체 변수
+static LPDIRECT3DDEVICE9			g_pd3dDevice = LPDIRECT3DDEVICE9();				//D3D 디바이스
+//extern LPDIRECT3DSURFACE9			g_pd3dSurface;
 
 
 // TODO: 프로그램에 필요한 추가 헤더는 여기에서 참조합니다.

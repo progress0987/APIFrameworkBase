@@ -1,9 +1,9 @@
 #pragma once
 #include "image.h"
-#include <d3dx9.h>
+#include "inc\d3dx9.h"
+
 
 #pragma comment(lib,"d3dx9.lib")
-
 
 class gameNode
 {

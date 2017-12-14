@@ -491,6 +491,123 @@ void D2DImage::rotatedframerender(int destX, int destY, int curX, int curY, FLOA
 	}
 }
 
+void D2DImage::centerrender(int destX, int destY, FLOAT angle)
+{
+
+	if (SUCCEEDED(c_pd3dSprite->Begin(D3DXSPRITE_ALPHABLEND))) {
+		//2D그리기 시작
+		int w = c_ImgInfo.Width;
+		int h = c_ImgInfo.Height;
+		D3DXVECTOR2 pos(destX, destY);					//좌상단 좌표
+		RECT rect = { 0,0,w,h };						//그림의 크기
+		D3DXVECTOR3 center(w / 2, h / 2, 0);	//그림의 중심점 - 회전의 중심일듯
+
+		D3DXVECTOR2 scale(1.f, 1.f);						//이미지의 스케일을결정(1이 기본), 중심을 기준으로커짐
+
+		DWORD color = 0xffffffff;							//색들을 출력해줄 정도로 보임(색을바꾸면 해당 색이 좀 빠짐)ARGB순서, A줄이면 이미지흐려짐
+
+		D3DXMATRIX mat;
+		D3DXMatrixTransformation2D(
+			&mat,						//출력
+			NULL,						//스케일링의 중심
+			0.0f,						//스케일링 회전률(???) -확인
+			&scale,						//스케일링
+			NULL,						//회전의 중심
+			angle,						//회전률
+			&pos);						//위치(트랜슬레이션)
+		c_pd3dSprite->SetTransform(&mat);
+		c_pd3dSprite->Draw(
+			c_pd3dTex,
+			&rect,
+			&center,
+			NULL,
+			color);
+		D3DXMatrixIdentity(&mat);							//단위행렬로 만들어서 아래서 곱함
+		c_pd3dSprite->SetTransform(&mat);
+
+
+		c_pd3dSprite->End();
+	}
+}
+
+void D2DImage::centerrender(int destX, int destY, int sourX, int sourY, int sourW, int sourH, FLOAT angle)
+{
+
+	if (SUCCEEDED(c_pd3dSprite->Begin(D3DXSPRITE_ALPHABLEND))) {
+		//2D그리기 시작
+		int w = sourW;
+		int h = sourH;
+		D3DXVECTOR2 pos(destX, destY);					//좌상단 좌표
+		RECT rect = { sourX,sourY,sourX + w,sourY + h };	//그림의 크기
+		D3DXVECTOR3 center(w / 2, h / 2, 0);	//그림의 중심점 - 회전의 중심일듯
+
+		D3DXVECTOR2 scale(1.f, 1.f);						//이미지의 스케일을결정(1이 기본), 중심을 기준으로커짐
+
+		DWORD color = 0xffffffff;							//색들을 출력해줄 정도로 보임(색을바꾸면 해당 색이 좀 빠짐)ARGB순서, A줄이면 이미지흐려짐
+
+		D3DXMATRIX mat;
+		D3DXMatrixTransformation2D(
+			&mat,						//출력
+			NULL,						//스케일링의 중심
+			0.0f,						//스케일링 회전률(???) -확인
+			&scale,						//스케일링
+			NULL,						//회전의 중심
+			angle,						//회전률
+			&pos);						//위치(트랜슬레이션)
+		c_pd3dSprite->SetTransform(&mat);
+		c_pd3dSprite->Draw(
+			c_pd3dTex,
+			&rect,
+			&center,
+			NULL,
+			color);
+		D3DXMatrixIdentity(&mat);							//단위행렬로 만들어서 아래서 곱함
+		c_pd3dSprite->SetTransform(&mat);
+
+
+		c_pd3dSprite->End();
+	}
+}
+
+void D2DImage::centerframerender(int destX, int destY, int curX, int curY, FLOAT angle)
+{
+
+	if (SUCCEEDED(c_pd3dSprite->Begin(D3DXSPRITE_ALPHABLEND))) {
+		//2D그리기 시작
+		int w = frameWidth;
+		int h = frameHeight;
+		D3DXVECTOR2 pos(destX, destY);							//좌상단 좌표
+		RECT rect = { curX * w,curY * h,w + curX * w,h + curY * h };	//그림의 크기
+		D3DXVECTOR3 center(w / 2, h / 2, 0);	//그림의 중심점 - 회전의 중심일듯
+
+		D3DXVECTOR2 scale(1.f, 1.f);						//이미지의 스케일을결정(1이 기본), 중심을 기준으로커짐
+
+		DWORD color = 0xffffffff;							//색들을 출력해줄 정도로 보임(색을바꾸면 해당 색이 좀 빠짐)ARGB순서, A줄이면 이미지흐려짐
+
+		D3DXMATRIX mat;
+		D3DXMatrixTransformation2D(
+			&mat,						//출력
+			NULL,						//스케일링의 중심
+			0.0f,						//스케일링 회전률(???) -확인
+			&scale,						//스케일링
+			NULL,						//회전의 중심
+			angle,						//회전률
+			&pos);						//위치(트랜슬레이션)
+		c_pd3dSprite->SetTransform(&mat);
+		c_pd3dSprite->Draw(
+			c_pd3dTex,
+			&rect,
+			&center,
+			NULL,
+			color);
+		//D3DXMatrixIdentity(&mat);							//단위행렬로 만들어서 아래서 곱함
+		//c_pd3dSprite->SetTransform(&mat);
+
+
+		c_pd3dSprite->End();
+	}
+}
+
 
 D2DImage::D2DImage()
 {

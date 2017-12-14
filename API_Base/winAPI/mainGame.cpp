@@ -14,10 +14,15 @@ mainGame::~mainGame()
 HRESULT mainGame::init(void) 
 {
 	gameNode::init(true);
-	IMAGEMANAGER->addFrameImage("좀비", g_pd3dDevice, "sprites/zombie.png", 44, 8);
-	IMAGEMANAGER->addImage("테스트", g_pd3dDevice, "sprites/test.jpg");
+	LoadImages();
+
 	testx = 0;
 	testy = 1;
+	mainCam = new Camera;
+	mainCam->x = 0;
+	mainCam->y = 0;
+	Desert.setCam(mainCam);
+	Desert.init();
 
 	return S_OK;
 }
@@ -58,18 +63,39 @@ HRESULT mainGame::init(void)
 		 testy = 5;
 	 }
 
+	 if (KEYMANAGER->isStayKeyDown('W')) {
+		 mainCam->y -= .5f;
+	 }
+	 if (KEYMANAGER->isStayKeyDown('S')) {
+		 mainCam->y += .5f;
+	 }
+	 if (KEYMANAGER->isStayKeyDown('A')) {
+		 mainCam->x -= 1.f;
+	 }
+	 if (KEYMANAGER->isStayKeyDown('D')) {
+		 mainCam->x += 1.f;
+	 }
+
  }
  //여기가 그려주는 곳
  void mainGame::render() 
  {
+	 Desert.render();
 	 paint();
 	 TIMEMANAGER->render(getMemDC());
 
  }
 
+ void mainGame::LoadImages()
+ {
+	 IMAGEMANAGER->addFrameImage("좀비", g_pd3dDevice, "sprites/zombie.png", 44, 8);
+	 IMAGEMANAGER->addImage("테스트", g_pd3dDevice, "sprites/test.jpg");
+	 IMAGEMANAGER->addFrameImage("사막맵타일", g_pd3dDevice, "sprites/DesertTiles.png", 16, 2);
+ }
+
  void mainGame::paint()
  {
-	 IMAGEMANAGER->findImage("테스트")->render(300, 300);
-	 IMAGEMANAGER->findImage("좀비")->framerender(posx, posy, testx, testy);
+	 IMAGEMANAGER->findImage("테스트")->centerrender(300, 300);
+	 IMAGEMANAGER->findImage("좀비")->centerframerender(posx, posy, testx, testy);
 	 //test1.framerender(posx, posy,testx, testy);
  }
