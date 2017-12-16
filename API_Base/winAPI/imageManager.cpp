@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "imageManager.h"
 
+extern LPDIRECT3DDEVICE9			g_pd3dDevice;
+extern LPDIRECT3D9					g_pD3D;
+extern LPDIRECT3DSURFACE9			g_pd3dSurface;
+
 
 imageManager::imageManager()
 {

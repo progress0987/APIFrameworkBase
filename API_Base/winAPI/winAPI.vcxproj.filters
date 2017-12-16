@@ -201,6 +201,9 @@
     <ClInclude Include="Field.h">
       <Filter>2DGameFramework\Map</Filter>
     </ClInclude>
+    <ClInclude Include="D2DTextTest.h">
+      <Filter>2DGameFramework\Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -304,6 +307,9 @@
     </ClCompile>
     <ClCompile Include="Field.cpp">
       <Filter>2DGameFramework\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="D2DTextTest.cpp">
+      <Filter>2DGameFramework\Tests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

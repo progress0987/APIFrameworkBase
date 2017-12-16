@@ -145,6 +145,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="D2DImage.h" />
+    <ClInclude Include="D2DTextTest.h" />
     <ClInclude Include="d2dx_test.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="iniDataManager.h" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="D2DImage.cpp" />
+    <ClCompile Include="D2DTextTest.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="iniDataManager.cpp" />
     <ClCompile Include="bullets.cpp" />

@@ -43,7 +43,7 @@
 //{
 //	for (BulletListIter = BulletList.begin(); BulletListIter != BulletList.end(); BulletListIter++) {
 //		if (BulletListIter->fired) {
-//			BulletListIter->bulletImg->render(getMemDC(), BulletListIter->rc.left, BulletListIter->rc.top, 0, 0, BulletListIter->bulletImg->getWidth(), BulletListIter->bulletImg->getHeight());
+//			BulletListIter->bulletImg->render(hdc, BulletListIter->rc.left, BulletListIter->rc.top, 0, 0, BulletListIter->bulletImg->getWidth(), BulletListIter->bulletImg->getHeight());
 //		}
 //	}
 //}
@@ -104,7 +104,7 @@
 //	for (BulletListIter = BulletList.begin(); BulletListIter != BulletList.end(); BulletListIter++) {
 //		if (BulletListIter->fired) {
 //			//수정할것
-//			BulletListIter->bulletImg->frameRender(getMemDC(), BulletListIter->rc.left, BulletListIter->rc.top, BulletListIter->bulletImg->getFrameX(), 0);
+//			BulletListIter->bulletImg->frameRender(hdc, BulletListIter->rc.left, BulletListIter->rc.top, BulletListIter->bulletImg->getFrameX(), 0);
 //			//아마도 미사일 애니메이션 프레임을 정하는듯
 //			BulletListIter->count++;
 //			//프레임애니메이션
@@ -221,7 +221,7 @@
 //void classBullet::draw()
 //{
 //	for (BulletListIter = BulletList.begin(); BulletListIter != BulletList.end(); BulletListIter++) {
-//		BulletListIter->bulletImg->render(getMemDC(), BulletListIter->rc.left, BulletListIter->rc.top);
+//		BulletListIter->bulletImg->render(hdc, BulletListIter->rc.left, BulletListIter->rc.top);
 //	}
 //}
 //
@@ -290,7 +290,7 @@
 //
 //		frame = (angle / (PI / 8));
 //
-//		BulletIter->bulletImg->frameRender(getMemDC(), BulletIter->rc.left, BulletIter->rc.top, frame, 0);
+//		BulletIter->bulletImg->frameRender(hdc, BulletIter->rc.left, BulletIter->rc.top, frame, 0);
 //	}
 //}
 //

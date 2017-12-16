@@ -27,24 +27,24 @@ void fontTest::render()
 	//	0,					//자간
 	//	TEXT("궁서체")		//내부시스템폰트가져옴
 	//);
-	FillRect(getMemDC(), &RectMake(0, 0, WINSIZEX, WINSIZEY), CreateSolidBrush(RGB(255, 0, 0)));
-	font1 = CreateFont(80, 0, 0, 0, 300, true, 1, false, HANGUL_CHARSET, 0, 0, 0, 0, TEXT("돋움체"));
-	SetBkMode(getMemDC(),TRANSPARENT);
-	oldFont = (HFONT)SelectObject(getMemDC(), font1);
-	sprintf(str, "배고프다");
-	
-	TextOut(getMemDC(), 10, 100, str, strlen(str));
+	//FillRect(hdc, &RectMake(0, 0, WINSIZEX, WINSIZEY), CreateSolidBrush(RGB(255, 0, 0)));
+	//font1 = CreateFont(80, 0, 0, 0, 300, true, 1, false, HANGUL_CHARSET, 0, 0, 0, 0, TEXT("돋움체"));
+	//SetBkMode(hdc,TRANSPARENT);
+	//oldFont = (HFONT)SelectObject(hdc, font1);
+	//sprintf(str, "배고프다");
+	//
+	//TextOut(hdc, 10, 100, str, strlen(str));
 
 	DeleteObject(oldFont);
 	DeleteObject(font1);
 
-	RECT rcText = RectMake(10, 300, 400, 100);
-	HFONT font2 = CreateFont(80, 0, 0, 0, 300, false, false, false, DEFAULT_CHARSET, OUT_STRING_PRECIS, CLIP_CHARACTER_PRECIS, PROOF_QUALITY, DEFAULT_PITCH|FF_SWISS, TEXT("Import"));
+	//RECT rcText = RectMake(10, 300, 400, 100);
+	//HFONT font2 = CreateFont(80, 0, 0, 0, 300, false, false, false, DEFAULT_CHARSET, OUT_STRING_PRECIS, CLIP_CHARACTER_PRECIS, PROOF_QUALITY, DEFAULT_PITCH|FF_SWISS, TEXT("Import"));
 
-	HFONT oldfont2 = (HFONT)SelectObject(getMemDC(), font2);
-	DrawText(getMemDC(), TEXT("테스팅중"), 8, &rcText, DT_CENTER | DT_VCENTER|DT_SINGLELINE);
-	DeleteObject(oldfont2);
-	DeleteObject(font2);
+	//HFONT oldfont2 = (HFONT)SelectObject(hdc, font2);
+	//DrawText(hdc, TEXT("테스팅중"), 8, &rcText, DT_CENTER | DT_VCENTER|DT_SINGLELINE);
+	//DeleteObject(oldfont2);
+	//DeleteObject(font2);
 
 }
 

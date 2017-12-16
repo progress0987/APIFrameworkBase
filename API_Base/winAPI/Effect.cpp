@@ -41,7 +41,7 @@ void Effect::render(void)
 {
 	if (!isRunning) return;
 
-	//effectImage->aniRender(getMemDC(), x, y, effectAnimation);
+	//effectImage->aniRender(hdc, x, y, effectAnimation);
 }
 
 void Effect::startEffect(int x, int y)

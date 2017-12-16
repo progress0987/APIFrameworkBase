@@ -39,10 +39,10 @@
 //	switch (Dir) {
 //	case BUTTONDIRECTION_NULL:
 //	case BUTTONDIRECTION_UP:
-//		img->frameRender(getMemDC(), rc.left, rc.top, btnUpFramePoint.x, btnUpFramePoint.y);
+//		img->frameRender(hdc, rc.left, rc.top, btnUpFramePoint.x, btnUpFramePoint.y);
 //		break;
 //	case BUTTONDIRECTION_DOWN:
-//		img->frameRender(getMemDC(), rc.left, rc.top, btnDownFramePoint.x, btnDownFramePoint.y);
+//		img->frameRender(hdc, rc.left, rc.top, btnDownFramePoint.x, btnDownFramePoint.y);
 //		break;
 //	}
 //}

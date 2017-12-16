@@ -17,7 +17,7 @@ void PixelCollisionTest::update(void)
 	//if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) x += 3.0f;
 	//probeY = y + ball->getHeight() / 2;
 	//for (int i = probeY - 50; i < probeY + 50; i++) {
-	//	COLORREF color = GetPixel(IMAGEMANAGER->findImage("BG")->getMemDC(), x, i);
+	//	COLORREF color = GetPixel(IMAGEMANAGER->findImage("BG")->hdc, x, i);
 	//	int r = GetRValue(color);
 	//	int g = GetGValue(color);
 	//	int b = GetBValue(color);

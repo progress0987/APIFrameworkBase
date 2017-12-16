@@ -1,13 +1,12 @@
 #pragma once
 #include "gameNode.h"
 
+#define TILEHEIGHT 64
+#define TILEWIDTH TILEHEIGHT*2
 
-#define TILEHEIGHT 32
-#define TILEWIDTH 64
 
-
-#define TILENUMX 50
-#define TILENUMY 50
+#define TILENUMX 15
+#define TILENUMY 15
 
 
 struct tile {

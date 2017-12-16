@@ -25,8 +25,8 @@ void progressBar::update()
 
 void progressBar::render()
 {
-	//IMAGEMANAGER->render("BOTBAR", getMemDC(), rcProg.left + progBarBot->getWidth() / 2, rcProg.top + this->y + progBarBot->getHeight() / 2, 0, 0, width, progBarBot->getHeight());
-	//IMAGEMANAGER->render("TOPBAR", getMemDC(), rcProg.left + progBarTop->getWidth() / 2, rcProg.top + this->y + progBarTop->getHeight() / 2, 0, 0, width, progBarTop->getHeight());
+	//IMAGEMANAGER->render("BOTBAR", hdc, rcProg.left + progBarBot->getWidth() / 2, rcProg.top + this->y + progBarBot->getHeight() / 2, 0, 0, width, progBarBot->getHeight());
+	//IMAGEMANAGER->render("TOPBAR", hdc, rcProg.left + progBarTop->getWidth() / 2, rcProg.top + this->y + progBarTop->getHeight() / 2, 0, 0, width, progBarTop->getHeight());
 }
 
 void progressBar::setGauge(float curGauge, float maxGauge)

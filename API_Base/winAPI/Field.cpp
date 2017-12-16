@@ -6,6 +6,10 @@
 	맨 처음(왼쪽위) 타일은 무조건 센터에서 타일가로길이 * 가로의 숫자 만큼 떨어짐
 
 */
+extern LPDIRECT3D9					g_pD3D;
+extern LPDIRECT3DDEVICE9			g_pd3dDevice;
+extern LPDIRECT3DSURFACE9			g_pd3dSurface;
+
 void Field::init()
 {
 	tileset = IMAGEMANAGER->findImage("사막맵타일");
@@ -35,7 +39,7 @@ void Field::render()
 			for (int x = 0; x < TILENUMX; x++) {
 				int w = tileset->frameWidth;
 				int h = tileset->frameHeight;
-				D3DXVECTOR2 pos(map[x][y].pos.x - cam->x, map[x][y].pos.y - cam->y);							//좌상단 좌표
+				D3DXVECTOR2 pos(map[x][y].pos.x - cam->x, map[x][y].pos.y - cam->y);							//중심 좌표
 				RECT rect = {
 					map[x][y].index.x * w,
 					map[x][y].index.y * h,
