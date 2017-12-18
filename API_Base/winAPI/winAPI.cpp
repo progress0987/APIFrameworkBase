@@ -8,6 +8,7 @@ HWND _hWnd;					//조작질
 LPTSTR _lpszClass = TEXT("API BASE");
 
 POINT ptMouse;
+FLOAT ptScale;			//스케일 값(마우스로함)
 mainGame _mg;
 
 

@@ -33,6 +33,8 @@ public:
 	void paint();
 	void paintDC();
 
+	void setMatrices();
+
 	mainGame();
 	~mainGame();
 };

@@ -27,7 +27,27 @@ void Field::init()
 
 void Field::update()
 {
-	//? 쓸게있나?
+	for (int y = 0; y < TILENUMY; y++) {
+		for (int x = 0; x < TILENUMX; x++) {
+			if (PtInRect(&RectMakeCenter(map[y][x].pos.x - cam->x, map[y][x].pos.y - cam->y, TILEWIDTH / 2, TILEHEIGHT / 2), ptMouse)) {
+				if (KEYMANAGER->isStayKeyDown(VK_LBUTTON)) {
+					map[y][x].index = pointMake(0, 0);
+				}
+			}
+		}
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
+		//cam->offsetX = (ptMouse.x - WINSIZEX / 2) -cam->x;
+		//cam->offsetY = (ptMouse.y - WINSIZEY / 2) -cam->y;
+		cam->offsetX = (ptMouse.x - WINSIZEX / 2) - cam->x;
+		cam->offsetY = (ptMouse.y - WINSIZEY / 2) - cam->y;
+	}
+	if (KEYMANAGER->isStayKeyDown(VK_RBUTTON)) {
+		//cam->x = (ptMouse.x - WINSIZEX / 2) -cam->offsetX;
+		//cam->y = (ptMouse.y - WINSIZEY / 2) -cam->offsetY;
+		cam->x = (ptMouse.x - WINSIZEX / 2) - cam->offsetX;
+		cam->y = (ptMouse.y - WINSIZEY / 2) - cam->offsetY;
+	}
 }
 
 void Field::render()
@@ -47,7 +67,7 @@ void Field::render()
 					h + map[x][y].index.y * h };	//그림의 크기
 				D3DXVECTOR3 center(w / 2, h / 2, 0);	//그림의 중심점 - 회전의 중심일듯
 
-				D3DXVECTOR2 scale(1.f, 1.f);						//이미지의 스케일을결정(1이 기본), 중심을 기준으로커짐
+				D3DXVECTOR2 scale(1.f,1.f);						//이미지의 스케일을결정(1이 기본), 중심을 기준으로커짐
 
 				DWORD color = 0xffffffff;							//색들을 출력해줄 정도로 보임(색을바꾸면 해당 색이 좀 빠짐)ARGB순서, A줄이면 이미지흐려짐
 

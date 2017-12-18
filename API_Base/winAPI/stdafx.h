@@ -89,10 +89,11 @@ using namespace Util;
 extern HINSTANCE _hInstance;
 extern HWND _hWnd;
 extern POINT ptMouse;
+extern FLOAT ptScale;
 
 struct Camera {
-	DOUBLE x;
-	DOUBLE y;
+	DOUBLE x, y;
+	DOUBLE offsetX, offsetY;
 };
 extern LPDIRECT3D9					g_pD3D;						//D3D 디바이스를 생성할 D3D 객체 변수
 extern LPDIRECT3DDEVICE9			g_pd3dDevice;				//D3D 디바이스

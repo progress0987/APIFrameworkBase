@@ -55,6 +55,7 @@ HRESULT gameNode::init(bool managerInit)
 		SOUNDMANAGER->init();
 		TXTDATA->init();
 	}
+	ptScale = 1.f;
 	return S_OK;
 }
  void gameNode::release(void)
@@ -86,7 +87,7 @@ HRESULT gameNode::init(bool managerInit)
 LRESULT gameNode::MainProc(HWND hwnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
 	PAINTSTRUCT ps;
-
+	short tmp;
 	switch (iMessage)
 	{
 	
@@ -106,6 +107,12 @@ LRESULT gameNode::MainProc(HWND hwnd, UINT iMessage, WPARAM wParam, LPARAM lPara
 		ptMouse.y = static_cast<float>HIWORD(lParam);
 		break;
 
+	case WM_MOUSEWHEEL://마우스 스크롤
+		tmp = HIWORD(wParam);
+		if (tmp > 0)ptScale += 0.1f;		//위
+		else if (tmp < 0)ptScale -= 0.1f;	//아래
+
+		break;
 	case WM_KEYDOWN:
 		switch (wParam)
 		{
